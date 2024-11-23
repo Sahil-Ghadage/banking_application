@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Cards microservice",
-				description = "EazyBank Cards microservice REST API Documentation",
+				description = "Cards microservice REST API Documentation",
 				version = "v1",
 				contact = @Contact(
 						name = "Sahil Ghadage",
