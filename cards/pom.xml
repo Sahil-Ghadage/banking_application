@@ -11,6 +11,7 @@
 	<groupId>com.sahilg.banking</groupId>
 	<artifactId>cards</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>cards</name>
 	<description>Education Project By Sahil Ghadage - Cards Microservices</description>
 	<url/>
