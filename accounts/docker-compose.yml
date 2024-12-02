@@ -32,6 +32,19 @@ services:
           memory: 900m
     networks:
       - bankapp
+
+  configserver:
+    image: "sahilghadage5/configserver:v1"
+    container_name: configserver-ms
+    ports:
+      - "8071:8071"
+    deploy:
+      resources:
+        limits:
+          memory: 900m
+    networks:
+      - bankapp
+
 networks:
   bankapp:
     driver: "bridge"
