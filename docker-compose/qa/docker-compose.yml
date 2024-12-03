@@ -30,16 +30,16 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "eazybytes/configserver:s7"
+    image: "sahilghadage5/configserver:v1"
     container_name: configserver-ms
     ports:
       - "8071:8071"
     healthcheck:
       test: "curl --fail --silent localhost:8071/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 10s
+      interval: 100s
+      timeout: 50s
+      retries: 100
+      start_period: 100s
     extends:
       file: common-config.yml
       service: microservice-base-config

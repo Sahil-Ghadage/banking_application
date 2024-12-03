@@ -9,10 +9,10 @@ services:
     image: mysql
     healthcheck:
       test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
-      timeout: 10s
-      retries: 10
-      interval: 10s
-      start_period: 10s
+      timeout: 100s
+      retries: 100
+      interval: 100s
+      start_period: 100s
     environment:
       MYSQL_ROOT_PASSWORD: root
 
@@ -29,6 +29,6 @@ services:
       service: microservice-base-config
     environment:
       SPRING_PROFILES_ACTIVE: default
-      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+      SPRING_CONFIG_IMPORT: optional:configserver:http://configserver:8071/
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
