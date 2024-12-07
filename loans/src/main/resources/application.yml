@@ -6,15 +6,13 @@ spring:
     username: sa
     password: ''
   h2:
+    database-platform: org.hibernate.dialect.H2Dialect
     console:
       enabled: true
   jpa:
     hibernate:
       ddl-auto: update
-      show-sql: false
-  sql:
-    init:
-      mode: always
+
   config:
     import: "optional:configserver:http://localhost:8071/"
 
