@@ -1,6 +1,7 @@
 package com.sahilg.banking.accounts.mapper;
 
 import com.sahilg.banking.accounts.dto.CustomerDTO;
+import com.sahilg.banking.accounts.dto.CustomerDetailsDTO;
 import com.sahilg.banking.accounts.entity.Customer;
 
 public class CustomerMapper {
@@ -18,6 +19,14 @@ public class CustomerMapper {
         customerDto.setMobileNumber(customer.getMobileNumber());
         return customerDto;
     }
+
+    public static CustomerDetailsDTO mapToCustomerDetailsDto(Customer customer, CustomerDetailsDTO customerDetailsDto) {
+        customerDetailsDto.setName(customer.getName());
+        customerDetailsDto.setEmail(customer.getEmail());
+        customerDetailsDto.setMobileNumber(customer.getMobileNumber());
+        return customerDetailsDto;
+    }
+
 
     /**
      *
