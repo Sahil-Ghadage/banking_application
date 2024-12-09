@@ -4,8 +4,6 @@ services:
     container_name: configserver-ms
     ports:
       - "8071:8071"
-    command:
-      sh -c "apt-get update && apt-get install -y git curl && java -jar /app/configserver.jar"
     healthcheck:
       test: "curl --fail --silent localhost:8071/actuator/health/readiness | grep UP || exit 1"
       interval: 10s
@@ -21,8 +19,6 @@ services:
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
-    command:
-      sh -c "apt-get update && apt-get install -y curl && java -jar /app/eurekaserver.jar"
     depends_on:
       configserver:
         condition: service_healthy
