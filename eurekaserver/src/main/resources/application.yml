@@ -21,7 +21,3 @@ management:
     health:
       probes:
         enabled: true
-eureka:
-  client:
-    fetchRegistry: false
-    registerWithEureka: false
