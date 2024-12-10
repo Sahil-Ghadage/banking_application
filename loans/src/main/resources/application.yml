@@ -3,18 +3,21 @@ server:
 spring:
   application:
     name: "loans"
+  profiles:
+    active: "prod"
   datasource:
     url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
     username: sa
     password: ''
   h2:
-    database-platform: org.hibernate.dialect.H2Dialect
     console:
       enabled: true
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-
+    show-sql: true
   config:
     import: "optional:configserver:http://localhost:8071/"
 
@@ -23,9 +26,17 @@ management:
     web:
       exposure:
         include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
   endpoint:
     shutdown:
       enabled: true
+    health:
+      probes:
+        enabled: true
   info:
     env:
       enabled: true
@@ -36,7 +47,6 @@ endpoints:
 
 eureka:
   instance:
-    appname: loans
     preferIpAddress: true
   client:
     fetchRegistry: true
@@ -49,3 +59,10 @@ info:
     name: "loans"
     description: "Bank App Loans Application"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      sahilg:
+        banking:
+          loans: DEBUG
