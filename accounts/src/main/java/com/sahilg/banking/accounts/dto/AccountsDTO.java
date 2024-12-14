@@ -27,7 +27,7 @@ public class AccountsDTO {
 
     @NotEmpty(message = "Branch can not be a null or empty")
     @Schema(
-            description = "Bank Branch", example = "Mumbai"
+            description = "Bank Branch", example = "Pune"
     )
     private String branch ;
 }

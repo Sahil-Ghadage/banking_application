@@ -43,7 +43,7 @@ public class I_AccountsServiceImpl implements I_AccountsService{
 
         newAccount.setAccountNumber(randomAccNumber);
         newAccount.setAccount_type("SAVINGS");
-        newAccount.setBranch("Mumbai");
+        newAccount.setBranch("Pune");
         return newAccount;
     }
     @Override

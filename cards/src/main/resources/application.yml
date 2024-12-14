@@ -1,4 +1,3 @@
-
 server:
   port: 9000
 spring:
@@ -14,6 +13,8 @@ spring:
   h2:
     console:
       enabled: true
+      settings:
+        web-allow-others: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
